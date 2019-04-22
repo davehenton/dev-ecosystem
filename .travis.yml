@@ -17,7 +17,7 @@ before_install:
 before_script:
   - docker-compose build app
   - docker-compose run -e HANAMI_ENV=test app hanami db prepare
-  - docker-compose run -e CC_TEST_REPORTER_ID=$CC_TEST_REPORTER_ID -e GIT_COMMITTED_AT=$GIT_COMMITTED_AT -e GIT_BRANCH=$TRAVIS_BRANCH app ENV ./script/cc-test-reporter before-build
+  - docker-compose run -e CC_TEST_REPORTER_ID=$CC_TEST_REPORTER_ID -e GIT_COMMITTED_AT=$GIT_COMMITTED_AT -e GIT_BRANCH=$TRAVIS_BRANCH app ./script/cc-test-reporter before-build
 
 script:
   - docker-compose run app rspec
