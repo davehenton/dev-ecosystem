@@ -23,4 +23,4 @@ script:
   - docker-compose run app rspec
 
 after_script:
-  - docker-compose run -e CC_TEST_REPORTER_ID=$CC_TEST_REPORTER_ID -e GIT_COMMITTED_AT=$GIT_COMMITTED_AT -e app ./script/cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - docker-compose run -e CC_TEST_REPORTER_ID=$CC_TEST_REPORTER_ID -e GIT_COMMITTED_AT=$GIT_COMMITTED_AT app ./script/cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
